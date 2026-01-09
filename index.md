@@ -36,16 +36,22 @@ C. Tính bảo mật và tin cậy (security & reliability)
 
 D. Tính dễ sử dụng (usability)
 
-```mermaid
+<div class="mermaid">
 graph TD
     A[Requirements] --> B[System Design]
     B --> C[Implementation]
     C --> D[Testing]
     D --> E[Deployment]
     E --> F[Maintenance]
-```
+</div>
 
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
   mermaid.initialize({ startOnLoad: true });
-</script>
+  window.mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+</script> <br>
+
+
+# Chương 2
+
+
