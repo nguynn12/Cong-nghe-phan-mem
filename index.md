@@ -17,7 +17,7 @@ A. Lấy và phân tích yêu cầu; Thiết kế
 
 B. Lập trình; Kiểm thử
 
-<mark>C. Họp nhóm dự án<mark>
+<mark>C. Họp nhóm dự án</mark>
 
 D. Triển khai; Vận hành và Bảo trì
 
