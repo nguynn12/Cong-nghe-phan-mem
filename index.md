@@ -1,3 +1,8 @@
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+
 # Chương 1. Giới thiệu về công nghệ phần mềm
 
 1.7 Bài tập và câu hỏi
