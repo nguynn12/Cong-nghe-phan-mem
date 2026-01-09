@@ -49,9 +49,4 @@ graph TD
 <script>
   mermaid.initialize({ startOnLoad: true });
   window.mermaid.init(undefined, document.querySelectorAll('.mermaid'));
-</script> <br>
-
-
-# Chương 2
-
-
+</script>
