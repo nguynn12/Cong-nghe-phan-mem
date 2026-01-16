@@ -1,6 +1,6 @@
 # Chương 1. Giới thiệu về công nghệ phần mềm
 
-1.7 Bài tập và câu hỏi
+## 1.7 Bài tập và câu hỏi
 
 <b>Bài 1. Bạn sẽ lựa chọn theo Công nghệ phần mềm hay Khoa học máy tính? Tại sao?</b>
 
@@ -36,11 +36,11 @@ C. Tính bảo mật và tin cậy (security & reliability)
 
 D. Tính dễ sử dụng (usability)
 
-<div class="mermaid">
+<pre class="mermaid">
 graph TD
-A[Requirements] --> B[System Design]
-B --> C[Implementation]
-C --> D[Testing]
-D --> E[Deployment]
-E --> F[Maintenance]
-</div>
+    A[Requirements] --> B[System Design]
+    B --> C[Implementation]
+    C --> D[Testing]
+    D --> E[Deployment]
+    E --> F[Maintenance]
+</pre>
