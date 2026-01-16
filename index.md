@@ -93,11 +93,14 @@ graph LR
 graph LR
     A[Product Backlog] --> B[Sprint Planning]
     B --> C[Sprint Backlog]
-    subgraph Sprint [Sprint (1-4 Weeks)]
+    
+    subgraph SprintCycle ["Giai đoạn Sprint (1-4 Tuần)"]
+        direction TB
         D[Design] --> E[Develop]
         E --> F[Test]
         F --> D
     end
+    
     C --> D
     F --> G[Daily Scrum]
     G --> H[Shippable Product]
