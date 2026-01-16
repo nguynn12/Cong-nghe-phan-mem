@@ -91,21 +91,30 @@ graph LR
 
 <pre class="mermaid">
 graph LR
-    A[Product Backlog] --> B[Sprint Planning]
+    %% Các thành phần đầu vào
+    A[Product Backlog] --> B(Sprint Planning)
     B --> C[Sprint Backlog]
     
+    %% Vòng lặp Sprint
     subgraph SprintCycle ["Giai đoạn Sprint (1-4 Tuần)"]
         direction TB
-        D[Design] --> E[Develop]
-        E --> F[Test]
-        F --> D
+        D[Development Work]
+        E((Daily Scrum))
+        
+        %% Mũi tên 2 chiều thể hiện việc họp diễn ra song song với làm việc
+        D <--> E
     end
     
+    %% Luồng đi vào và đi ra Sprint
     C --> D
-    F --> G[Daily Scrum]
-    G --> H[Shippable Product]
-    H --> I[Sprint Review]
-    I --> J[Sprint Retrospective]
+    
+    %% Kết quả
+    D --> F[Shippable Product]
+    F --> G(Sprint Review)
+    G --> H(Sprint Retrospective)
+    
+    %% Mũi tên quay vòng cho Sprint tiếp theo
+    H -.-> B
 </pre>
 
 ---
