@@ -38,9 +38,9 @@ D. Tính dễ sử dụng (usability)
 
 <div class="mermaid">
 graph TD
-    A[Requirements] --> B[System Design]
-    B --> C[Implementation]
-    C --> D[Testing]
-    D --> E[Deployment]
-    E --> F[Maintenance]
+A[Requirements] --> B[System Design]
+B --> C[Implementation]
+C --> D[Testing]
+D --> E[Deployment]
+E --> F[Maintenance]
 </div>
