@@ -44,9 +44,3 @@ graph TD
     D --> E[Deployment]
     E --> F[Maintenance]
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>
-  mermaid.initialize({ startOnLoad: true });
-  window.mermaid.init(undefined, document.querySelectorAll('.mermaid'));
-</script>
