@@ -91,30 +91,35 @@ graph LR
 
 <pre class="mermaid">
 graph LR
-    %% Các thành phần đầu vào
-    A[Product Backlog] --> B(Sprint Planning)
-    B --> C[Sprint Backlog]
-    
-    %% Vòng lặp Sprint
-    subgraph SprintCycle ["Giai đoạn Sprint (1-4 Tuần)"]
+    %% --- GIAI ĐOẠN CHUẨN BỊ (Mũi tên bên trái) ---
+    Start1[Scope] --> Start2[Product Backlog]
+    Start2 --> Start3[Design]
+
+    %% --- VÒNG LẶP SCRUM (Hình tròn ở giữa) ---
+    subgraph ScrumCycle ["SCRUM METHODOLOGY"]
         direction TB
-        D[Development Work]
-        E((Daily Scrum))
+        %% Các bước trong vòng tròn
+        P1(Sprint Planning meeting) --> P2[Sprint Backlog]
+        P2 --> P3[Sprint Execution]
         
-        %% Mũi tên 2 chiều thể hiện việc họp diễn ra song song với làm việc
-        D <--> E
+        %% Daily Scrum là vòng lặp nhỏ trên đầu Sprint Execution
+        P3 -- Daily Loop --> P4((Daily Scrum))
+        P4 --> P3
+        
+        P3 --> P5[Sprint Automation]
+        P5 --> P6[Sprint Review Meeting]
+        P6 --> P7[Sprint Retrospective]
+        
+        %% Đường quay lại để khép kín vòng tròn
+        P7 -.-> P1
     end
+
+    %% --- KẾT NỐI VÀO VÀ RA ---
+    %% Từ Design đi vào quy trình
+    Start3 --> P1
     
-    %% Luồng đi vào và đi ra Sprint
-    C --> D
-    
-    %% Kết quả
-    D --> F[Shippable Product]
-    F --> G(Sprint Review)
-    G --> H(Sprint Retrospective)
-    
-    %% Mũi tên quay vòng cho Sprint tiếp theo
-    H -.-> B
+    %% Từ Review tạo ra phần mềm sử dụng được (Mũi tên vàng bên phải)
+    P6 --> EndNode[Usable Software]
 </pre>
 
 ---
