@@ -171,3 +171,46 @@ D. Sprint backlog: danh mục các chức năng của một sprint
 
 > *Giải thích: "Scope" trong quản lý dự án là "Phạm vi dự án" (những việc cần làm), không phải là phạm vi của biến (variable scope) trong lập trình.*
 
+# Chương 3. Hệ thống quản lý phiên bản
+
+<b>Câu 1.1 Các đặc điểm của hệ thống quản lý phiên bản cục bộ (Local VCS). Phát biểu nào không đúng?</b> A. Có thể thực hiện thủ công B. Không hỗ trợ trong môi trường cộng tác nhiều người C. Có thể dùng phần mềm để quản lý phiên bản kiểu cục bộ <mark>D. Các phiên bản của dự án được lưu tập trung trên một máy server</mark>
+
+Giải thích: Hệ thống cục bộ chỉ lưu trên máy cá nhân. Việc lưu tập trung trên Server là đặc điểm của hệ thống Tập trung (Centralized).
+
+<b>Câu 1.2 Các đặc điểm của hệ thống quản lý phiên bản tập trung (Centralized VCS). Phát biểu nào không đúng?</b> A. Các phiên bản của dự án được lưu tập trung trên máy server <mark>B. Các máy client sẽ chứa tất cả các phiên bản của thư mục dự án cùng với lịch sử thay đổi</mark> C. Máy client không thể tải phiên bản của dự án về, khi máy server không hoạt động D. Hỗ trợ làm việc cộng tác nhiều người
+
+Giải thích: Trong hệ thống tập trung (như SVN), Client thường chỉ tải về bản mới nhất (Snapshot) để làm việc. Việc Client chứa "tất cả lịch sử" là đặc điểm cốt lõi của hệ thống Phân tán (Distributed).
+
+<b>Câu 1.3 Các đặc điểm của hệ thống quản lý phiên bản phân tán (Distributed VCS). Phát biểu nào không đúng?</b> A. Các máy client sẽ chứa toàn bộ các phiên bản của dự án, cùng lịch sử thay đổi B. Hỗ trợ làm việc cộng tác nhiều người C. Các phiên bản của dự án được lưu trên máy server <mark>D. Bạn không thể tạo và lưu phiên bản khi không có kết nối mạng tới máy server</mark>
+
+Giải thích: Đây là sức mạnh lớn nhất của hệ thống phân tán (như Git). Bạn hoàn toàn có thể commit (lưu phiên bản) ngay trên máy mình mà không cần mạng Internet. Khi nào có mạng mới cần đẩy (push) lên server.
+
+
+# Chương 4. Tổng quan về git
+
+### 2.4 Bài tập trắc nghiệm về Git
+
+<b>Câu 2.2 Lệnh nào được sử dụng để nhúng Git vào thư mục dự án?</b>
+<mark>A. git init</mark>
+B. git --init
+C. git initialize
+D. git embed
+
+> *Giải thích: `init` là viết tắt của **initialize** (khởi tạo). Lệnh này sẽ sinh ra một thư mục ẩn tên là `.git` trong dự án. Nếu không có thư mục này, Git sẽ không thể theo dõi dự án.*
+
+<b>Câu 2.3 Lệnh nào sử dụng để kiểm tra trên máy tính đã có phần mềm Git hay chưa?</b>
+A. git ver
+B. git version
+<mark>C. git -v</mark>
+D. git --ver
+
+> *Giải thích: Cú pháp chuẩn để kiểm tra phiên bản là `git --version` (đầy đủ) hoặc `git -v` (viết tắt). Các lệnh còn lại không đúng chuẩn cú pháp của Git.*
+
+<b>Câu 2.4 Trong Git, kho lưu trữ (repo, repository) là gì?</b>
+A. Là thư mục dự án
+B. Là thư mục dự án đã được nhúng Git
+C. Là thư mục cài đặt phần mềm Git
+<mark>D. Là thư mục .git (trong thư mục dự án)</mark>
+
+> *Giải thích: Đây là điểm quan trọng nhất. Thư mục bạn nhìn thấy code chỉ là "Thư mục làm việc" (Working Directory). Còn **Kho lưu trữ (Repository)** thực sự chính là thư mục ẩn **`.git`** - nơi chứa toàn bộ cơ sở dữ liệu và lịch sử thay đổi của dự án.*
+
