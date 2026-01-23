@@ -214,3 +214,50 @@ C. Là thư mục cài đặt phần mềm Git
 
 > *Giải thích: Đây là điểm quan trọng nhất. Thư mục bạn nhìn thấy code chỉ là "Thư mục làm việc" (Working Directory). Còn **Kho lưu trữ (Repository)** thực sự chính là thư mục ẩn **`.git`** - nơi chứa toàn bộ cơ sở dữ liệu và lịch sử thay đổi của dự án.*
 
+# Chương 5. Cấu hình định danh người dùng
+
+## 3.4 Bài tập và câu hỏi
+
+**Bài tập 3.1: Tình huống “Quản lý cấu hình Git cho nhiều dự án”**
+
+> **Yêu cầu:** Cấu hình sao cho dự án công ty dùng email công ty, dự án cá nhân dùng email cá nhân.
+
+**Giải pháp thực hiện (Các bước lệnh):**
+
+1.  **Cấu hình chung (Global) cho tài khoản cá nhân (Mặc định):**
+    Chúng ta nên thiết lập cấu hình Global cho thông tin cá nhân vì nó được dùng thường xuyên nhất.
+    ```bash
+    git config --global user.name "Nguyen Van Teo"
+    git config --global user.email "nvteo@gmail.com"
+    ```
+    *(Lúc này, mọi dự án mới tạo ra sẽ tự động dùng email cá nhân này).*
+
+2.  **Cấu hình riêng (Local) cho dự án công ty (TeoTechProject):**
+    Vì dự án công ty cần thông tin khác, ta sẽ ghi đè cấu hình Global bằng cấu hình Local.
+    * Di chuyển vào thư mục dự án công ty: `cd TeoTechProject`
+    * Chạy lệnh config (không có --global):
+    ```bash
+    git config user.name "Nguyen Van Teo"
+    git config user.email "nvteo@teotech.com"
+    ```
+
+**Kết quả:**
+* Khi commit ở `VienVongProject`: Git dùng cấu hình Global (nvteo@gmail.com).
+* Khi commit ở `TeoTechProject`: Git dùng cấu hình Local (nvteo@teotech.com) do Local có độ ưu tiên cao hơn Global.
+
+---
+
+**Câu 3.2 Phạm vi cấu hình định danh trong Git là gì? Phát biểu nào sau đây không đúng?**
+
+A. Phạm vi system áp dụng cho tất cả người dùng và kho lưu trữ trên hệ thống.
+B. Phạm vi global áp dụng cho tài khoản người dùng hiện tại và tất cả kho lưu trữ mà người dùng đó làm việc.
+<mark>C. Phạm vi local áp dụng cho một kho lưu trữ cụ thể và có độ ưu tiên thấp nhất.</mark>
+D. Phạm vi local áp dụng cho một kho lưu trữ cụ thể và có độ ưu tiên cao nhất.
+
+> **Giải thích:** Đáp án C sai vì cấu hình **Local có độ ưu tiên CAO NHẤT**.
+>
+> Thứ tự ưu tiên của Git là: **Local > Global > System**.
+> Điều này có nghĩa là nếu bạn cấu hình email ở Local khác với Global, Git sẽ ưu tiên sử dụng email ở Local cho dự án đó.
+
+# Chương 6. Các khu vực làm việc của Git
+
