@@ -1,6 +1,6 @@
 # Chương 1. Giới thiệu về công nghệ phần mềm
 
-## 1.7 Bài tập và câu hỏi
+## 1.7. Bài tập và câu hỏi
 
 <b>Bài 1. Bạn sẽ lựa chọn theo Công nghệ phần mềm hay Khoa học máy tính? Tại sao?</b>
 
@@ -32,7 +32,7 @@ D. Tính dễ sử dụng (usability)
 
 # Chương 2. Các mô hình phát triển phần mềm
 
-## 2.5 Bài tập và câu hỏi
+## 2.5. Bài tập và câu hỏi
 
 ### Bài 2a. Vẽ lại sơ đồ các mô hình
 
@@ -164,7 +164,7 @@ D. Sprint backlog: danh mục chức năng của một sprint.
 
 # Chương 3. Hệ thống quản lý phiên bản
 
-## 1.6 Bài tập
+## 1.6. Bài tập
 
 <b>Câu 1.1 Các đặc điểm của hệ thống quản lý phiên bản cục bộ (Local VCS). Phát biểu nào không đúng?</b> <br>
 A. Có thể thực hiện thủ công. <br>
@@ -203,7 +203,7 @@ C. Các phiên bản của dự án được lưu trên máy server (remote). <b
 
 # Chương 4. Tổng quan về Git
 
-## 2.4 Bài tập
+## 2.4. Bài tập
 
 [![Ảnh](Image/5.1.PNG)](Image/5.1.PNG)
 
@@ -238,7 +238,7 @@ C. Là thư mục cài đặt phần mềm Git. <br>
 
 # Chương 5. Cấu hình định danh người dùng
 
-## 3.4 Bài tập và câu hỏi
+## 3.4. Bài tập và câu hỏi
 
 <b>Bài tập 3.1: Bài tập tình huống “Quản lý cấu hình Git cho nhiều dự án”</b>
 
@@ -275,7 +275,7 @@ D. Phạm vi local áp dụng cho một kho lưu trữ cụ thể và có độ 
 
 # Chương 6. Các khu vực làm việc của Git
 
-## 4.3 Bài tập và câu hỏi ôn tập
+## 4.3. Bài tập và câu hỏi ôn tập
 
 <b>Bài tập 4.1 Thực hành lại các lệnh, tạo các thư mục, tập tin như trong bài học.</b>
 
@@ -301,7 +301,7 @@ D. Phản ánh các thay đổi so với commit cuối cùng, giúp bạn quyế
 
 # Chương 7. Quản lý dự án phần mềm
 
-## 3.9 Bài tập và câu hỏi
+## 3.9. Bài tập và câu hỏi
 
 ## Bài tập 3a. Mô tả vòng đời dự án cá nhân
 
@@ -396,7 +396,7 @@ D. Năm nhóm quy trình quản lý dự án bao gồm: Khởi xướng, Lập k
 
 # Chương 8. Các khu vực làm việc của Git (tiếp)
 
-## 5.5 Bài tập và câu hỏi ôn tập
+## 5.5. Bài tập và câu hỏi ôn tập
 
 <b>Bài tập 5.1 Thực hành các nội dung trong bài học</b>
 
@@ -439,3 +439,166 @@ B. Commit tạo ra một "ảnh chụp" (snapshot) mới trong lịch sử phiê
 D. Mỗi commit đi kèm một thông điệp (message) mô tả thay đổi.
 
 > *Giải thích: Đáp án C SAI vì Commit là hành động đi một chiều từ **Khu tạm (Staging) -> Kho chứa (Repo)**. Không có chuyện commit dùng để chuyển ngược lại.*
+
+# Chương 9. Lấy và phân tích yêu cầu
+
+## 4.3. Bài tập
+
+## Bài tập 3a. Tài liệu đặc tả yêu cầu người dùng (URS)
+
+**URS - TÀI LIỆU ĐẶC TẢ YÊU CẦU NGƯỜI DÙNG**
+**DỰ ÁN: ỨNG DỤNG ĐẶT LỊCH SÂN PICKLEBALL (PickleConnect)**
+
+### 1. Giới thiệu
+Tài liệu này trình bày các yêu cầu người dùng cho ứng dụng "PickleConnect". Hệ thống kết nối người chơi Pickleball với các chủ sân, giúp việc tìm kiếm sân trống, đặt lịch và thanh toán trở nên dễ dàng, tránh tình trạng trùng lịch hoặc phải gọi điện thoại thủ công.
+
+### 2. Các Loại Yêu Cầu
+
+#### 2.1. Yêu cầu Chức năng (Functional Requirements - FR)
+
+**2.1.1. Phân hệ Người chơi (Player)**
+* **FR-1.1 (Tìm kiếm sân):** Người chơi có thể tìm kiếm sân Pickleball theo khu vực (Quận/Huyện), mức giá, và tiện ích (có mái che, có đèn, có cho thuê vợt).
+* **FR-1.2 (Xem lịch trống):** Hệ thống hiển thị trạng thái sân (Trống/Đã đặt) theo thời gian thực (Real-time) trên lịch.
+* **FR-1.3 (Đặt sân):** Người chơi chọn khung giờ (ví dụ: 17:00 - 19:00), chọn số sân và tiến hành đặt lịch.
+* **FR-1.4 (Thanh toán):** Hỗ trợ thanh toán tiền cọc hoặc toàn bộ qua Ví điện tử (Momo, VNPay) hoặc Chuyển khoản QR.
+* **FR-1.5 (Tìm đối thủ - Kèo giao lưu):** Người chơi có thể tạo "Kèo" công khai để rủ người khác tham gia chung một sân.
+
+**2.1.2. Phân hệ Chủ sân (Court Owner)**
+* **FR-2.1 (Quản lý lịch):** Chủ sân có thể xem tổng quan lịch đặt trong ngày/tuần.
+* **FR-2.2 (Đóng/Mở sân):** Chủ sân có thể khóa sân thủ công (khi bảo trì hoặc có khách đặt trực tiếp qua điện thoại).
+* **FR-2.3 (Xác nhận):** Nhận thông báo khi có khách đặt mới và xác nhận (nếu cần).
+
+#### 2.2. Yêu cầu Phi chức năng (Non-Functional Requirements - NFR)
+
+* **NFR-1 (Độ trễ):** Trạng thái sân "Đang trống" hay "Đã đặt" phải được cập nhật tức thì (dưới 2 giây) để tránh 2 người cùng đặt 1 giờ.
+* **NFR-2 (Giao diện):** Thiết kế tối ưu cho Mobile (Mobile First) vì người chơi thường đặt sân qua điện thoại.
+* **NFR-3 (Thông báo):** Hệ thống gửi nhắc nhở trước giờ chơi 1 tiếng qua thông báo đẩy (Push Notification).
+* **NFR-4 (Bảo mật):** Thông tin thanh toán và số điện thoại người dùng phải được bảo mật.
+
+#### 3. Yêu cầu Nghiệp vụ (Domain Requirements)
+* **Quy tắc tính tiền:** Giá sân có thể khác nhau tùy khung giờ (Giờ vàng 17h-21h giá cao hơn giờ thường).
+* **Quy tắc hủy sân:** Chỉ cho phép hủy trước giờ chơi 24 tiếng để được hoàn tiền cọc. Hủy muộn mất cọc.
+
+#### 4. Phi yêu cầu (Non-Requirements)
+* [1] Không bao gồm chức năng bán dụng cụ Pickleball (vợt, bóng, giày) trực tiếp trên app.
+* [2] Không tổ chức giải đấu chuyên nghiệp (Tournament Management) trong giai đoạn 1.
+
+---
+
+## Bài tập 3b. Tài liệu đặc tả yêu cầu phần mềm (SRS)
+
+**SOFTWARE REQUIREMENTS SPECIFICATION (SRS)**
+**DỰ ÁN: ỨNG DỤNG ĐẶT LỊCH SÂN PICKLEBALL (PickleConnect)**
+
+### 1. Giới thiệu
+Tài liệu này mô tả chi tiết kỹ thuật, cấu trúc dữ liệu và các ràng buộc hệ thống để đội ngũ lập trình viên xây dựng ứng dụng PickleConnect.
+
+### 2. Mô tả tổng quát
+Hệ thống gồm:
+1. **Mobile App:** Dành cho người chơi (Flutter/React Native).
+2. **Web Admin:** Dành cho chủ sân quản lý (ReactJS).
+3. **Backend Server:** NodeJS/ExpressJS, Database PostgreSQL.
+
+### 3. Yêu cầu chức năng chi tiết (Kỹ thuật)
+
+**3.1. Quản lý Đặt lịch (Booking Module)**
+* **SRS-F01 (Check Availability):**
+    * Input: `Court_ID`, `Date`, `Start_Time`, `End_Time`.
+    * Logic: Query Database kiểm tra xem có bản ghi nào trùng `Court_ID` và thời gian giao nhau (Overlap) không.
+    * Output: Nếu Count = 0 -> Trả về "Available". Ngược lại -> "Booked".
+* **SRS-F02 (Lock Slot):** Khi người dùng nhấn "Thanh toán", hệ thống tạm khóa slot đó trong 10 phút để chờ thanh toán, tránh người khác đặt tranh.
+
+**3.2. Quản lý Giá sân (Dynamic Pricing)**
+* **SRS-F03:** Hệ thống tính toán `Total_Price` dựa trên bảng giá theo khung giờ (`Time_Slot_Price`).
+    * Ví dụ: Nếu `Time` in [17:00, 21:00] -> Giá = Base_Price * 1.5.
+
+**3.3. Tích hợp Thanh toán (Payment Gateway)**
+* **SRS-F04:** Tích hợp API cổng thanh toán (VD: VNPay).
+    * Khi nhận Webhook `Success` từ VNPay -> Cập nhật trạng thái Booking thành `Confirmed`.
+    * Khi nhận `Fail` -> Hủy slot tạm khóa.
+
+### 4. Yêu cầu phi chức năng (Kỹ thuật)
+
+| Mã số | Đặc tính | Chi tiết kỹ thuật |
+| :--- | :--- | :--- |
+| **SRS-N01** | **Concurrency (Đồng thời)** | Xử lý tốt trường hợp 500 người cùng truy cập xem lịch vào giờ cao điểm. |
+| **SRS-N02** | **Data Integrity** | Sử dụng Transaction trong Database để đảm bảo không bị lỗi dữ liệu khi thanh toán (trừ tiền nhưng không đặt được sân). |
+| **SRS-N03** | **Scalability** | Thiết kế Database cho phép mở rộng thêm nhiều sân và chuỗi sân khác nhau. |
+
+### 5. Quy tắc nghiệp vụ (Business Rules)
+* **BR-01 (Overlap Check):** Thời gian đặt tối thiểu là 1 giờ. Các slot đặt phải liền mạch, không được lẻ phút (Ví dụ: Đặt 17:00-18:00 chứ không đặt 17:15-18:15).
+* **BR-02 (Refund):** Nếu hủy trước `Config_Cancel_Time` (24h), hệ thống tự động hoàn 100% tiền vào Ví nội bộ.
+
+### 6. Ràng buộc & Phạm vi
+* **Phạm vi:** Triển khai thử nghiệm dữ liệu sân tại khu vực TP.HCM.
+* **Ngôn ngữ:** Tiếng Việt.
+* **Hạ tầng:** Deploy trên Cloud (AWS/Google Cloud).
+
+# Chương 10. Nguyên tắc làm việc của Git
+
+## 6.4. Bài tập và câu hỏi
+
+### Bài tập 6a. Quy trình làm việc và các trạng thái của tập tin trong Git.
+
+[![Ảnh](Image/10.1.png)](Image/10.1.png)
+
+*Link tài liệu thực hành: [Click on me](https://drive.google.com/drive/folders/1g5N6bjw-Icr8atUKebA-df_4SeyS7HCV)*
+
+### Bài tập 6b. Rèn kỹ năng phân tích
+
+[![Ảnh](Image/10.2.png)](Image/10.2.png)
+
+**Tình huống 1: Chỉnh sửa tập tin đã Commit**
+
+* **Câu hỏi phân tích:** Tại sao tập tin này lại xuất hiện ở mục "Changes not staged for commit" mà không phải "Untracked"? Sự khác biệt giữa một tập tin mới tạo và một tập tin đã từng được commit nhưng bị sửa đổi là gì?
+* **Trả lời:**
+    * **Lý do không phải "Untracked":** Vì tập tin `readme.txt` đã được commit ít nhất một lần trước đó, nghĩa là Git đã có dữ liệu về nó và đang ở trạng thái **Được theo dõi (Tracked)**. Trạng thái "Untracked" chỉ dành cho các tập tin hoàn toàn mới mà Git chưa từng biết đến.
+    * **Sự khác biệt:**
+        * **Tập tin mới tạo:** Chưa tồn tại trong cơ sở dữ liệu của Git (Untracked).
+        * **Tập tin đã commit bị sửa đổi:** Đã tồn tại trong cơ sở dữ liệu (Tracked), nhưng nội dung ở *Thư mục làm việc* đang khác với nội dung trong *Kho chứa/Khu tạm*. Git đánh dấu là **Modified**.
+
+**Tình huống 2: So sánh nội dung (git diff)**
+
+* **Câu hỏi phân tích:** Lệnh này đang so sánh nội dung giữa khu vực nào với khu vực nào?
+* **Trả lời:**
+    * Lệnh `git diff` (khi không có tham số nào đi kèm) thực hiện so sánh sự khác biệt giữa **Thư mục làm việc (Working Directory)** và **Khu tạm (Staging Area)**.
+    * Tức là nó hiển thị những thay đổi bạn đã thực hiện (Save) nhưng chưa dùng lệnh `git add` để đưa vào vùng chờ.
+
+### Bài tập 6c. Rèn kỹ năng tổng hợp: "Thiết kế quy trình xử lý sự cố"
+
+**Tình huống 1: "Lỡ tay đưa nhầm tập tin quan trọng"**
+
+* **Vấn đề:** Đã lỡ chạy `git add .` và đưa tập tin `matkhau.txt` (chứa thông tin nhạy cảm) vào Khu tạm.
+* **Quy trình xử lý:**
+    1.  Chạy lệnh: `git rm --cached matkhau.txt`
+    2.  (Tùy chọn) Thêm tên tập tin vào `.gitignore` để tránh bị nhầm lần sau.
+* **Giải thích:**
+    * Chúng ta sử dụng lệnh `git rm --cached` thay vì `git rm` (hoặc xóa thủ công).
+    * **Lý do:** Tham số `--cached` chỉ ra lệnh cho Git xóa tập tin đó khỏi **Khu tạm (Staging Area)** nhưng **vẫn giữ nguyên** tập tin đó trong **Thư mục làm việc** trên máy tính. Nếu xóa thủ công, bạn sẽ mất luôn dữ liệu mật khẩu quan trọng đó.
+
+**Tình huống 2: "Khôi phục trạng thái cũ"**
+
+* **Vấn đề:** Tập tin `readme.txt` bị sửa nội dung sai, muốn quay lại nội dung của lần Commit gần nhất.
+* **Lệnh thực hiện:**
+    * `git restore readme.txt` (đối với phiên bản Git mới).
+    * Hoặc: `git checkout -- readme.txt` (đối với phiên bản Git cũ).
+* **Giải thích:**
+    * **Tại sao Kho chứa là nguồn tin cậy?** Kho chứa (Repository) lưu trữ các "ảnh chụp" (snapshot) đã được xác nhận là an toàn và hoàn chỉnh.
+    * Khi Thư mục làm việc bị "bẩn" (do sửa sai), ta dùng lệnh trên để lấy bản sao sạch từ Kho chứa **ghi đè** ngược lại vào Thư mục làm việc, giúp loại bỏ hoàn toàn các thay đổi sai lầm chưa commit.
+
+### Bài tập 6d. Rèn tư duy suy luận
+
+**1. Nếu người A sửa tập tin nhưng chưa `git add`, người B có thấy được thay đổi đó trong Kho chứa không?**
+
+* **Trả lời:** **KHÔNG.**
+* **Giải thích:**
+    * Trong Git, sự thay đổi đi theo quy trình: `Thư mục làm việc` -> `Khu tạm` -> `Kho chứa`.
+    * Khi người A chưa chạy lệnh `git add`, những thay đổi đó hoàn toàn nằm cục bộ tại **Thư mục làm việc (Working Directory)** trên máy tính của người A.
+    * Kho chứa (Repository) chưa hề nhận được bất kỳ thông tin gì về sự thay đổi này. Do đó, người B (hoặc bất kỳ ai khác) truy cập vào Kho chứa sẽ không thể nhìn thấy chúng.
+
+**2. Tại sao Git lại cần "Khu tạm" (Staging Area) mà không cho phép Commit thẳng từ Thư mục làm việc?**
+
+* **Trả lời:** Khu tạm đóng vai trò là "vùng đệm" giúp kiểm soát và tổ chức lịch sử dự án tốt hơn.
+* **Lợi ích cụ thể:**
+    * **Chọn lọc thay đổi (Selective Committing):** Trong thực tế, lập trình viên thường sửa nhiều file cùng lúc cho các mục đích khác nhau (ví dụ: vừa sửa lỗi A, vừa viết tính năng B). Khu tạm cho phép ta chỉ `git add` các file liên quan đến lỗi A để commit trước, sau đó mới `git add` tính năng B để commit sau.
+    * **Kiểm tra trước khi lưu:** Nó giúp ta có cơ hội xem xét lại (review) những gì sắp được lưu vĩnh viễn. Nếu không có Khu tạm, mọi thay đổi (kể cả những file nháp, file lỗi) sẽ bị tống hết vào lịch sử dự án, gây lộn xộn và khó quản lý.
