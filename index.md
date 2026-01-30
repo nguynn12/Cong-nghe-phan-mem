@@ -206,7 +206,7 @@ C. Các phiên bản của dự án được lưu trên máy server (remote). <b
 ## 2.4 Bài tập
 
 <b>Bài tập 2.1 Thực hành các cài đặt trong bài học.</b>
-*Link tài liệu thực hành: [Click here](https://drive.google.com/drive/folders/1g5N6bjw-Icr8atUKebA-df_4SeyS7HCV)*
+*Link tài liệu thực hành: [Click on me](https://drive.google.com/drive/folders/1g5N6bjw-Icr8atUKebA-df_4SeyS7HCV)* <br> (The reason I created more files, folders instead of placing them in here (github) is, the main folder holds everything such as Image, readme, _config file, also include this, index.html which writes down everything here, has .git (Rule: Only 1 .git file is allowed))
 
 <b>Câu 2.2 Lệnh nào được sử dụng để nhúng Git vào thư mục dự án?</b> <br>
 <mark>A. git init</mark> <br>
@@ -271,3 +271,121 @@ D. Phạm vi local áp dụng cho một kho lưu trữ cụ thể và có độ 
 
 # Chương 6. Các khu vực làm việc của Git
 
+## 4.3 Bài tập và câu hỏi ôn tập
+
+<b>Bài tập 4.1 Thực hành lại các lệnh, tạo các thư mục, tập tin như trong bài học.</b>
+
+*Link tài liệu thực hành: [Click on me](https://drive.google.com/drive/folders/1g5N6bjw-Icr8atUKebA-df_4SeyS7HCV)*
+
+<b>Câu 4.2 Ba khu vực làm việc chính của Git là gì? Phát biểu nào sau đây không đúng?</b> <br>
+A. Thư mục làm việc (working directory) là nơi bạn chỉnh sửa tập tin trực tiếp. <br>
+<mark>B. Khu tạm (staging area) là nơi lưu trữ lịch sử phiên bản của dự án.</mark> <br>
+C. Kho chứa (repository) là nơi lưu trữ lịch sử phiên bản của dự án. <br>
+D. Lệnh git add được sử dụng để chuyển các thay đổi từ Thư mục làm việc sang Khu tạm.
+
+> *Giải thích: Khu tạm (Staging Area) chỉ là nơi trung gian để chuẩn bị file trước khi commit. Nơi lưu trữ lịch sử thực sự là **Kho chứa (Repository)**.*
+
+<b>Câu 4.3 Thư mục làm việc (working directory) trong Git là gì? Phát biểu nào sau đây không đúng?</b> <br>
+A. Là thư mục thực tế trên máy tính, nơi bạn làm việc trực tiếp với các tập tin của dự án. <br>
+B. Là nơi bạn tạo, sửa, hoặc xóa tập tin trước khi đưa thay đổi vào .git. <br>
+<mark>C. Là nơi lưu trữ lịch sử phiên bản và dữ liệu chính thức của dự án.</mark> <br>
+D. Phản ánh các thay đổi so với commit cuối cùng, giúp bạn quyết định những gì cần thêm vào Khu tạm (staging area).
+
+> *Giải thích: Nơi lưu trữ lịch sử và dữ liệu chính thức là thư mục ẩn **.git (Repository)**. Còn Thư mục làm việc chỉ là "bàn làm việc" chứa các file hiện hành để bạn thao tác, sửa đổi.*
+
+# Chương 7. Quản lý dự án phần mềm
+
+## 3.9 Bài tập và câu hỏi
+
+## Bài tập 3a. Mô tả vòng đời dự án cá nhân
+
+**Tên dự án:** Xây dựng Website Portfolio Cá nhân (Giới thiệu bản thân)
+**Người thực hiện:** [Điền Họ và Tên của bạn vào đây]
+
+### 1. Giai đoạn Xác định nhiệm vụ (Defining)
+* **Mục tiêu (Goal):** Xây dựng một website cá nhân hoàn chỉnh để giới thiệu kỹ năng lập trình, các dự án đã làm và CV online nhằm mục đích xin thực tập/việc làm.
+* **Kết quả cần đạt:**
+    * Website hoạt động ổn định trên môi trường Internet.
+    * Giao diện đẹp, chuyên nghiệp, hiển thị tốt trên cả máy tính và điện thoại (Responsive).
+    * Hoàn thành trước hạn nộp bài tập môn Công nghệ phần mềm.
+* **Các bên liên quan (Stakeholders):**
+    * Chủ dự án/Người thực hiện: [Tên của bạn].
+    * Khách hàng/Người đánh giá: Giảng viên bộ môn và nhà tuyển dụng tương lai.
+
+### 2. Giai đoạn Lập kế hoạch (Planning)
+* **Phạm vi (Scope):** Website gồm 3 trang chính:
+    * *Trang chủ (Home):* Giới thiệu ngắn gọn về bản thân.
+    * *Trang Dự án (Projects):* Danh sách các bài tập lớn, đồ án đã thực hiện.
+    * *Trang Liên hệ (Contact):* Thông tin liên lạc (Email, GitHub, LinkedIn).
+* **Thời gian thực hiện (Time):** 4 tuần (Từ ngày ... đến ngày ...).
+* **Ngân sách (Cost):** 0 VNĐ (Sử dụng các công cụ mã nguồn mở và Hosting miễn phí).
+* **Nguồn lực:** Laptop cá nhân, Wifi, VS Code, Git/GitHub.
+* **Lịch trình sơ bộ:**
+    * *Tuần 1:* Nghiên cứu giao diện mẫu, ôn tập HTML/CSS.
+    * *Tuần 2:* Cấu trúc thư mục dự án, code khung sườn HTML.
+    * *Tuần 3:* Trang trí giao diện bằng CSS, thêm hiệu ứng JS.
+    * *Tuần 4:* Đưa mã nguồn lên GitHub, triển khai (Deploy) và kiểm thử.
+
+### 3. Giai đoạn Thực thi & Kiểm soát (Executing & Controlling)
+* **Hoạt động thực thi:**
+    * Đã khởi tạo kho chứa Git (Repository).
+    * Đã hoàn thành giao diện cơ bản (Layout) trong tuần 2.
+    * Đang tiến hành tối ưu hóa hiển thị trên di động.
+* **Kiểm soát & Xử lý vấn đề:**
+    * *Vấn đề:* Gặp lỗi xung đột CSS khi hiển thị trên iPhone.
+    * *Giải pháp:* Tra cứu tài liệu Bootstrap/W3Schools để sửa lỗi.
+    * *Điều chỉnh:* Do thời gian gấp rút, quyết định bỏ tính năng "Gửi email trực tiếp" mà thay bằng "Link gửi mail" để đảm bảo kịp tiến độ (Giảm Scope để đảm bảo Time).
+
+### 4. Giai đoạn Kết thúc (Closing)
+* **Sản phẩm bàn giao:** Đường link website hoàn chỉnh (Ví dụ: `nguyenvanteo.github.io`).
+* **Đánh giá dự án:**
+    * Website chạy ổn định, tốc độ tải trang nhanh.
+    * Màu sắc hài hòa, đúng với thiết kế ban đầu.
+* **Bài học kinh nghiệm:** Cần dự trù thời gian fix bug (sửa lỗi) nhiều hơn trong kế hoạch lần sau, vì giai đoạn này tốn nhiều thời gian hơn dự kiến.
+
+---
+
+## Bài tập 3b. Viết tôn chỉ dự án (Project Charter)
+
+**BẢN TUYÊN BỐ TÔN CHỈ DỰ ÁN (PROJECT CHARTER)**
+
+| Hạng mục | Nội dung chi tiết |
+| :--- | :--- |
+| **Tên dự án** | **Website Portfolio Cá nhân** |
+| **Ngày bắt đầu** | 01/10/2023 |
+| **Ngày kết thúc** | 30/10/2033 |
+| **Quản lý dự án** | 100kg Solar Original |
+| **Nhà tài trợ** | Tự đầu tư (Cá nhân) |
+| **Mục tiêu dự án** | - Xây dựng thương hiệu cá nhân chuyên nghiệp.<br>- Tạo nơi lưu trữ và trưng bày các sản phẩm phần mềm đã làm.<br>- Phục vụ cho môn học Công nghệ phần mềm và xin việc làm. |
+| **Phạm vi dự án** | **Bao gồm:**<br>- Thiết kế giao diện (UI/UX).<br>- Lập trình Frontend (HTML, CSS, JS).<br>- Triển khai lên Hosting miễn phí (GitHub Pages/Vercel).<br><br>**Không bao gồm:**<br>- Phần Backend quản trị (Admin Dashboard).<br>- Mua tên miền trả phí (.com, .vn). |
+| **Ngân sách** | **0 VNĐ - 500.000 VNĐ** (Dự phòng mua tên miền riêng nếu cần thiết, ưu tiên dùng tài nguyên miễn phí). |
+| **Các mốc quan trọng** | - **Tuần 1:** Chốt ý tưởng và giao diện (Mockup).<br>- **Tuần 2:** Hoàn thành Code thô (HTML).<br>- **Tuần 3:** Hoàn thành giao diện chi tiết (CSS/JS).<br>- **Tuần 4:** Public website và nộp bài. |
+| **Rủi ro chính** | - Thiếu kiến thức về Responsive Design (Giao diện di động).<br>- Lịch học các môn khác dày đặc làm chậm tiến độ.<br>- Sự cố kỹ thuật khi Deploy lên Server. |
+| **Tiêu chí thành công** | - Website truy cập được từ mọi thiết bị.<br>- Không có lỗi hiển thị (Broken layout).<br>- Được giảng viên chấp thuận và đánh giá đạt yêu cầu. |
+
+<b>Câu hỏi 3.1 Về định nghĩa và các yếu tố của quản lý. Phát biểu nào sau đây là không đúng?</b>
+
+<mark>A. Quản lý là sự tác động của đối tượng quản lý lên chủ thể quản lý nhằm thay đổi mục tiêu ban đầu của tổ chức.</mark>
+B. Một trong những yếu tố bắt buộc của quản lý là phải có mục tiêu nhất định cần đạt được.
+C. Hoạt động quản lý diễn ra trong điều kiện môi trường luôn có những biến động, đòi hỏi sự thích nghi của chủ thể.
+D. Các yếu tố cơ bản trong quản lý bao gồm: chủ thể quản lý, đối tượng quản lý, mục tiêu và môi trường quản lý.
+
+> *Giải thích: Đáp án A SAI vì định nghĩa đúng phải ngược lại: Quản lý là sự tác động của **Chủ thể quản lý** (người sếp) lên **Đối tượng quản lý** (nhân viên/công việc), chứ không phải nhân viên tác động lên sếp để đổi mục tiêu.*
+
+<b>Câu hỏi 3.2 Về khái niệm và các yếu tố của dự án, phát biểu nào sau đây là không đúng?</b> <br>
+
+A. Dự án là một nỗ lực có thời hạn nhằm tạo ra một sản phẩm, dịch vụ hoặc kết quả duy nhất. <br>
+<mark>B. Một dự án có thể được lặp đi lặp lại nhiều lần trong quá trình vận hành để tối ưu hóa kết quả.</mark> <br>
+C. Bốn yếu tố quan trọng để đánh giá một dự án bao gồm: chất lượng thực hiện, thời gian, kết quả và kinh phí. <br>
+D. Khi một công việc được lặp lại tương tự như trước đó, nó không còn được coi là một dự án nữa.
+
+> *Giải thích: Đáp án B SAI vì đặc tính cốt lõi của Dự án là **"Duy nhất"** (Unique) và **"Tạm thời"** (Temporary). Nếu một việc cứ lặp đi lặp lại hàng ngày (như dây chuyền sản xuất), nó gọi là **Vận hành** (Operation), không phải là Dự án.*
+
+<b>Câu hỏi 3.3: Về khái niệm và quy trình Quản lý dự án, phát biểu nào sau đây là không đúng?</b> <br>
+
+A. Quản lý dự án là hoạt động áp dụng các kiến thức, kĩ năng, công cụ và kỹ thuật để lên kế hoạch hành động, nhằm đạt được các yêu cầu của dự án. <br>
+<mark>B. Quản lý dự án chỉ tập trung vào việc triển khai thực hiện mà không cần thiết phải lập kế hoạch hành động.</mark> <br>
+C. Quản lý dự án là việc áp dụng các kiến thức, kĩ năng, công cụ và kỹ thuật để đạt được các yêu cầu của dự án. <br>
+D. Năm nhóm quy trình quản lý dự án bao gồm: Khởi xướng, Lập kế hoạch, Triển khai, Giám sát và kiểm soát, Kết thúc.
+
+> *Giải thích: Đáp án B SAI hoàn toàn. Trong quản lý dự án, **Lập kế hoạch (Planning)** là một trong những khâu quan trọng nhất. Làm dự án mà không lập kế hoạch thì nắm chắc thất bại.*
