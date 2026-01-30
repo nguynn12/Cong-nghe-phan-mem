@@ -205,6 +205,10 @@ C. Các phiên bản của dự án được lưu trên máy server (remote). <b
 
 ## 2.4 Bài tập
 
+[![Ảnh](Image/5.1.PNG)](Image/5.1.PNG)
+
+[![Ảnh](Image/5.2.PNG)](Image/5.2.PNG)
+
 <b>Bài tập 2.1 Thực hành các cài đặt trong bài học.</b>
 *Link tài liệu thực hành: [Click on me](https://drive.google.com/drive/folders/1g5N6bjw-Icr8atUKebA-df_4SeyS7HCV)* <br> (The reason I created more files, folders instead of placing them in here (github) is, the main folder holds everything such as Image, readme, _config file, also include this, index.html which writes down everything here, has .git (Rule: Only 1 .git file is allowed))
 
@@ -275,6 +279,8 @@ D. Phạm vi local áp dụng cho một kho lưu trữ cụ thể và có độ 
 
 <b>Bài tập 4.1 Thực hành lại các lệnh, tạo các thư mục, tập tin như trong bài học.</b>
 
+[![Ảnh](Image/6.1.PNG)](Image/6.1.PNG)
+
 *Link tài liệu thực hành: [Click on me](https://drive.google.com/drive/folders/1g5N6bjw-Icr8atUKebA-df_4SeyS7HCV)*
 
 <b>Câu 4.2 Ba khu vực làm việc chính của Git là gì? Phát biểu nào sau đây không đúng?</b> <br>
@@ -343,8 +349,6 @@ D. Phản ánh các thay đổi so với commit cuối cùng, giúp bạn quyế
     * Màu sắc hài hòa, đúng với thiết kế ban đầu.
 * **Bài học kinh nghiệm:** Cần dự trù thời gian fix bug (sửa lỗi) nhiều hơn trong kế hoạch lần sau, vì giai đoạn này tốn nhiều thời gian hơn dự kiến.
 
----
-
 ## Bài tập 3b. Viết tôn chỉ dự án (Project Charter)
 
 **BẢN TUYÊN BỐ TÔN CHỈ DỰ ÁN (PROJECT CHARTER)**
@@ -389,3 +393,49 @@ C. Quản lý dự án là việc áp dụng các kiến thức, kĩ năng, côn
 D. Năm nhóm quy trình quản lý dự án bao gồm: Khởi xướng, Lập kế hoạch, Triển khai, Giám sát và kiểm soát, Kết thúc.
 
 > *Giải thích: Đáp án B SAI hoàn toàn. Trong quản lý dự án, **Lập kế hoạch (Planning)** là một trong những khâu quan trọng nhất. Làm dự án mà không lập kế hoạch thì nắm chắc thất bại.*
+
+# Chương 8. Các khu vực làm việc của Git (tiếp)
+
+## 5.5 Bài tập và câu hỏi ôn tập
+
+<b>Bài tập 5.1 Thực hành các nội dung trong bài học</b>
+
+[![Ảnh](Image/8.1.png)](Image/8.1.png)
+
+*Link tài liệu thực hành: [Click on me](https://drive.google.com/drive/folders/1g5N6bjw-Icr8atUKebA-df_4SeyS7HCV)*
+
+<b>Câu hỏi 5.2 Khu tạm (staging area) trong Git là gì? Phát biểu nào sau đây không đúng?</b>
+
+A. Khu tạm là một khu vực trung gian giữa Thư mục làm việc (working directory) và Kho chứa (repository).
+<mark>B. Khu tạm là một thư mục vật lý trong Thư mục làm việc.</mark>
+C. Khu tạm cho phép bạn chọn lọc và tổ chức các thay đổi bạn muốn đưa vào commit tiếp theo.
+D. Lệnh git rm --cached <tên_tập_tin> được sử dụng để gỡ bỏ tên tập tin ra khỏi Khu tạm.
+
+> *Giải thích: Đáp án B SAI vì Khu tạm không phải là một thư mục vật lý chứa file copy. Thực chất nó chỉ là một **tập tin nhị phân** có tên là `index` nằm bên trong thư mục ẩn `.git`, chứa thông tin về các file chuẩn bị commit.*
+
+<b>Câu hỏi 5.3 gitignore là gì? Phát biểu nào sau đây không đúng?</b>
+
+<mark>A. gitignore giúp thêm các tập tin không liên quan (ví dụ: node_modules, tập tin log) vào kho chứa.</mark>
+B. gitignore là một cơ chế trong Git, cho phép bạn chỉ định các tập tin hoặc thư mục mà Git sẽ bỏ qua khi thực hiện các lệnh như git add hoặc git status.
+C. gitignore được thực hiện thông qua tập tin có tên là .gitignore, thường đặt ở thư mục gốc của dự án.
+D. Mục đích của gitignore là loại bỏ các tập tin không cần thiết khỏi lịch sử phiên bản, như tập tin tạm, tập tin nhị phân, hoặc thư viện phụ thuộc.
+
+> *Giải thích: Đáp án A SAI hoàn toàn vì mục đích của `.gitignore` là để **LOẠI BỎ** (ignore), không cho phép các file rác đó chui vào kho chứa. Ngược lại với ý "thêm vào kho chứa".*
+
+<b>Câu hỏi 5.4 Kho chứa (repository) trong Git là gì? Phát biểu nào sau đây không đúng?</b>
+
+A. Kho chứa là nơi lưu trữ tất cả các tập tin và lịch sử thay đổi của một dự án.
+B. Thư mục .git trong dự án chính là Kho chứa.
+C. Lệnh git commit được sử dụng để chuyển tập tin từ Thư mục làm việc (working directory) sang Kho chứa.
+<mark>D. Kho chứa cục bộ (local repository) là kho chứa được lưu trữ trên một máy chủ ở xa.</mark>
+
+> *Giải thích: Đáp án D SAI vì **Kho chứa cục bộ (Local)** là kho nằm ngay trên máy tính của bạn (trong thư mục `.git`). Còn kho nằm trên máy chủ (GitHub/GitLab) mới gọi là **Kho chứa ở xa (Remote Repository)**. (Lưu ý: Đáp án C trong đề bài gốc diễn đạt hơi tắt, đúng ra là từ Staging sang Repo, nhưng so với D thì D sai rõ ràng hơn).*
+
+<b>Câu 5.5 Commit trong Git là gì? Phát biểu nào sau đây không đúng?</b>
+
+A. Commit là lệnh trong Git dùng để lưu các thay đổi từ Khu tạm vào Kho chứa.
+B. Commit tạo ra một "ảnh chụp" (snapshot) mới trong lịch sử phiên bản.
+<mark>C. Commit dùng để chuyển tập tin từ Kho chứa sang Khu tạm.</mark>
+D. Mỗi commit đi kèm một thông điệp (message) mô tả thay đổi.
+
+> *Giải thích: Đáp án C SAI vì Commit là hành động đi một chiều từ **Khu tạm (Staging) -> Kho chứa (Repo)**. Không có chuyện commit dùng để chuyển ngược lại.*
