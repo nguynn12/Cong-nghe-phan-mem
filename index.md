@@ -603,7 +603,7 @@ Hệ thống gồm:
     * **Chọn lọc thay đổi (Selective Committing):** Trong thực tế, lập trình viên thường sửa nhiều file cùng lúc cho các mục đích khác nhau (ví dụ: vừa sửa lỗi A, vừa viết tính năng B). Khu tạm cho phép ta chỉ `git add` các file liên quan đến lỗi A để commit trước, sau đó mới `git add` tính năng B để commit sau.
     * **Kiểm tra trước khi lưu:** Nó giúp ta có cơ hội xem xét lại (review) những gì sắp được lưu vĩnh viễn. Nếu không có Khu tạm, mọi thay đổi (kể cả những file nháp, file lỗi) sẽ bị tống hết vào lịch sử dự án, gây lộn xộn và khó quản lý.
 
-# Thiết kế kiến trúc phần mềm
+# Chương 11. Thiết kế kiến trúc phần mềm
 
 ## 11.6. Bài tập
 
@@ -742,3 +742,33 @@ graph TD
 1.  **Khả năng mở rộng (Scalability):** Vào giờ cao điểm, người dùng chủ yếu là *Tìm sân*. Ta có thể nhân bản (scale up) 5 server chạy *Court Service*, trong khi *Identity Service* chỉ cần 1 server là đủ. Điều này tiết kiệm tài nguyên hơn so với Monolithic (phải nhân bản cả cục).
 2.  **Cách ly lỗi (Fault Isolation):** Nếu *Notification Service* bị chết (lỗi gửi mail), người dùng vẫn đặt sân và thanh toán bình thường. Hệ thống không bị sập toàn bộ.
 3.  **Công nghệ đa dạng:** *Court Service* cần tìm kiếm nhanh nên dùng MongoDB, trong khi *Booking Service* cần chặt chẽ nên dùng PostgreSQL. Microservices cho phép làm điều này dễ dàng.
+
+# Chương 12. Làm quen với Docker
+
+## 12.4. Bài tập và câu hỏi
+
+<b>Bài tập 12a. Tải và cài đặt Docker Desktop trên máy của bạn.</b>
+
+<b>Câu 12.1 Trong mô hình hoạt động của Docker Engine, thành phần nào đóng vai trò là "Người thực hiện" (nhận lệnh và trực tiếp xử lý các nhiệm vụ)?</b> <br>
+A. Docker CLI <br>
+B. REST API <br>
+<mark>C. Docker Daemon</mark> <br>
+D. Docker Desktop
+
+> *Giải thích: Theo lý thuyết mục 1.2, Docker Daemon được mô tả là "Người thực hiện", nhận lệnh và thực hiện nhiệm vụ.*
+
+<b>Câu 12.2 Khi cài đặt Docker Desktop trên Windows, công nghệ nào được khuyến khích sử dụng để giúp ứng dụng chạy nhanh và mượt mà hơn?</b> <br>
+A. Hyper-V <br>
+<mark>B. WSL 2</mark> <br>
+C. Virtualization trong BIOS <br>
+D. REST API
+
+> *Giải thích: Trong bước 2 của hướng dẫn cài đặt, có lưu ý tích chọn "Use WSL 2 instead of Hyper-V" để giúp Docker chạy nhanh và mượt hơn.*
+
+<b>Câu 12.3 Đâu là một trong những lợi ích chính của việc sử dụng Docker được đề cập trong tài liệu?</b> <br>
+A. Chỉ chạy được trên hệ điều hành Linux <br>
+<mark>B. Giúp mã nguồn chạy ổn định và ra cùng kết quả trên nhiều môi trường máy tính khác nhau</mark> <br>
+C. Tăng dung lượng bộ nhớ của máy tính cá nhân <br>
+D. Thay thế hoàn toàn các nhân viên bốc xếp tại bến cảng
+
+> *Giải thích: Mục 1.1 "Dùng docker có lợi gì?" nêu rõ lợi ích giúp mã nguồn chạy ổn định và cho ra kết quả giống nhau trên các máy khác nhau.*
