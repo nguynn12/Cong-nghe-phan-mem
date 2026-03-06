@@ -738,7 +738,7 @@ graph TD
     style Databases fill:#eceff1,stroke:#455a64
 </pre>
 
-**Tại sao chọn thiết kế này? (Giải thích ưu điểm):**
+**Tại sao chọn thiết kế này?**
 1.  **Khả năng mở rộng (Scalability):** Vào giờ cao điểm, người dùng chủ yếu là *Tìm sân*. Ta có thể nhân bản (scale up) 5 server chạy *Court Service*, trong khi *Identity Service* chỉ cần 1 server là đủ. Điều này tiết kiệm tài nguyên hơn so với Monolithic (phải nhân bản cả cục).
 2.  **Cách ly lỗi (Fault Isolation):** Nếu *Notification Service* bị chết (lỗi gửi mail), người dùng vẫn đặt sân và thanh toán bình thường. Hệ thống không bị sập toàn bộ.
 3.  **Công nghệ đa dạng:** *Court Service* cần tìm kiếm nhanh nên dùng MongoDB, trong khi *Booking Service* cần chặt chẽ nên dùng PostgreSQL. Microservices cho phép làm điều này dễ dàng.
