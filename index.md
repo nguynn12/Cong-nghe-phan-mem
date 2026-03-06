@@ -602,3 +602,143 @@ Hệ thống gồm:
 * **Lợi ích cụ thể:**
     * **Chọn lọc thay đổi (Selective Committing):** Trong thực tế, lập trình viên thường sửa nhiều file cùng lúc cho các mục đích khác nhau (ví dụ: vừa sửa lỗi A, vừa viết tính năng B). Khu tạm cho phép ta chỉ `git add` các file liên quan đến lỗi A để commit trước, sau đó mới `git add` tính năng B để commit sau.
     * **Kiểm tra trước khi lưu:** Nó giúp ta có cơ hội xem xét lại (review) những gì sắp được lưu vĩnh viễn. Nếu không có Khu tạm, mọi thay đổi (kể cả những file nháp, file lỗi) sẽ bị tống hết vào lịch sử dự án, gây lộn xộn và khó quản lý.
+
+# Thiết kế kiến trúc phần mềm
+
+## 11.6. Bài tập
+
+<b>Bài 11a. Dựa trên URS ứng dụng của bạn (nhóm), hãy phân tích và thiết kế theo kiến trúc 3-tầng.</b>
+
+**PHÂN TÍCH VÀ THIẾT KẾ KIẾN TRÚC 3-TẦNG CHO DỰ ÁN PICKLECONNECT**
+
+Dựa trên URS đã xây dựng ở Chương 9, hệ thống đặt lịch sân Pickleball sẽ được chia thành 3 tầng vật lý và logic rõ rệt để đảm bảo tính tách biệt và dễ bảo trì.
+
+**1. Tầng Trình bày (Presentation Tier)**
+Đây là nơi người dùng tương tác trực tiếp. Với PickleConnect, chúng ta có 2 đối tượng người dùng chính:
+* **Mobile App (Dành cho Player):** Xây dựng bằng *Flutter* hoặc *React Native*. Cho phép tìm sân, xem lịch trống, đặt sân và thanh toán.
+* **Web Admin (Dành cho Chủ sân & Admin):** Xây dựng bằng *ReactJS* hoặc *VueJS*. Cho phép quản lý lịch đặt, doanh thu, đóng/mở sân.
+* **Nhiệm vụ:** Gửi yêu cầu (HTTP Request) xuống tầng Logic và hiển thị dữ liệu (JSON) trả về dưới dạng giao diện đồ họa.
+
+**2. Tầng Logic nghiệp vụ (Business Logic Tier)**
+Đây là "bộ não" xử lý trung tâm, thường là một Backend Server (API).
+* **Công nghệ:** Node.js (Express Framework) hoặc Java (Spring Boot).
+* **Các Module xử lý chính:**
+    * *Auth Logic:* Kiểm tra đăng nhập, phân quyền (User vs Admin).
+    * *Booking Logic:* Kiểm tra xung đột lịch (Overlap check) - đảm bảo không có 2 người đặt cùng 1 giờ.
+    * *Pricing Logic:* Tính tiền giờ vàng/giờ thường.
+    * *Payment Logic:* Giao tiếp với cổng thanh toán VNPay/Momo.
+* **Nhiệm vụ:** Nhận dữ liệu từ Presentation, xử lý tính toán, sau đó gọi xuống Data Tier để lưu trữ hoặc truy vấn.
+
+**3. Tầng Dữ liệu (Data Tier)**
+Nơi lưu trữ bền vững toàn bộ thông tin hệ thống.
+* **Công nghệ:** PostgreSQL (Cơ sở dữ liệu quan hệ).
+* **Cấu trúc:**
+    * Bảng `Users`: Thông tin người dùng.
+    * Bảng `Courts`: Thông tin sân bãi.
+    * Bảng `Bookings`: Lưu lịch đặt (Giờ bắt đầu, giờ kết thúc, trạng thái).
+* **Nhiệm vụ:** Đảm bảo tính toàn vẹn dữ liệu (ACID), thực hiện các lệnh Query (Select, Insert, Update, Delete).
+
+**Sơ đồ kiến trúc 3-tầng (PickleConnect):**
+
+<pre class="mermaid">
+graph TD
+    subgraph Presentation [Tầng 1: Trình Bày]
+        Mobile[Mobile App (Player)]
+        Web[Web Admin (Owner)]
+    end
+
+    subgraph BusinessLogic [Tầng 2: Logic Nghiệp Vụ]
+        API[Backend API Server]
+        Note[Xử lý: Booking, Auth, Payment]
+    end
+
+    subgraph Data [Tầng 3: Dữ Liệu]
+        DB[(Database PostgreSQL)]
+    end
+
+    %% Luồng dữ liệu
+    Mobile -->|REST API / JSON| API
+    Web -->|REST API / JSON| API
+    API -->|SQL Query| DB
+    DB -->|Result| API
+    API -->|JSON Response| Mobile
+    API -->|JSON Response| Web
+
+    style Presentation fill:#e1f5fe,stroke:#01579b
+    style BusinessLogic fill:#fff9c4,stroke:#fbc02d
+    style Data fill:#e8f5e9,stroke:#2e7d32
+</pre>
+
+---
+
+<b>Bài 11b. Dựa trên URS ứng dụng của bạn (nhóm), hãy phân tích và thiết kế theo kiến trúc vi dịch vụ.</b>
+
+**PHÂN TÍCH VÀ THIẾT KẾ KIẾN TRÚC MICROSERVICES CHO DỰ ÁN PICKLECONNECT**
+
+**Giả định:** Ứng dụng PickleConnect phát triển quy mô toàn quốc, dữ liệu sân bãi cực lớn và lượng truy cập tìm kiếm sân lên tới hàng triệu request/ngày. Kiến trúc Monolithic (3-tầng đơn thuần) bắt đầu quá tải. Chúng ta chuyển sang Microservices.
+
+**Chiến lược tách dịch vụ (Decomposition Strategy):**
+Chúng ta sẽ tách Backend thành các dịch vụ nhỏ dựa trên "Nghiệp vụ" (Domain-Driven Design).
+
+**1. Các thành phần hạ tầng chung:**
+* **API Gateway:** Cổng vào duy nhất cho mọi request từ Mobile/Web (như lễ tân). Nó điều hướng request đến đúng service.
+* **Message Broker (Kafka/RabbitMQ):** Giúp các service giao tiếp bất đồng bộ (ví dụ: Đặt sân xong -> bắn tin nhắn sang service Thanh toán).
+
+**2. Các Microservices cụ thể:**
+
+| Tên dịch vụ | Nhiệm vụ chính | Cơ sở dữ liệu riêng (Database) |
+| :--- | :--- | :--- |
+| **Identity Service** | Quản lý đăng ký, đăng nhập, JWT Token, Profile người dùng. | **MySQL** (Lưu User, Role) |
+| **Court Service** | Quản lý danh sách sân, tìm kiếm, review sân. Đây là service chịu tải đọc (Read) cao nhất. | **MongoDB** (Lưu thông tin sân dạng Document để truy xuất nhanh) |
+| **Booking Service** | Xử lý logic đặt sân, kiểm tra trùng lịch, tính giá tiền. Service quan trọng nhất. | **PostgreSQL** (Cần tính toàn vẹn cao cho giao dịch) |
+| **Payment Service** | Tích hợp cổng thanh toán, lưu lịch sử giao dịch, hoàn tiền. | **PostgreSQL** (Bảo mật tài chính) |
+| **Notification Service** | Gửi Email xác nhận, Push Notification nhắc giờ chơi. | Không nhất thiết cần DB lớn, có thể dùng Redis hàng đợi. |
+
+**Sơ đồ kiến trúc Vi dịch vụ (PickleConnect):**
+
+<pre class="mermaid">
+graph TD
+    %% CLIENT SIDE
+    Client[Mobile App / Web] --> Gateway[API Gateway]
+
+    %% MICROSERVICES CLUSTER
+    subgraph Services [Hệ thống Backend Microservices]
+        Auth[Identity Service]
+        Court[Court Service]
+        Book[Booking Service]
+        Pay[Payment Service]
+        Noti[Notification Service]
+    end
+
+    %% DATABASES
+    subgraph Databases [Cơ sở dữ liệu phân tán]
+        DB1[(Auth DB)]
+        DB2[(Court DB)]
+        DB3[(Booking DB)]
+        DB4[(Payment DB)]
+    end
+
+    %% KẾT NỐI
+    Gateway --> Auth
+    Gateway --> Court
+    Gateway --> Book
+    Gateway --> Pay
+
+    Auth --> DB1
+    Court --> DB2
+    Book --> DB3
+    Pay --> DB4
+
+    %% GIAO TIẾP GIỮA CÁC SERVICE (Async)
+    Book -.->|1. Booking Created Event| Pay
+    Pay -.->|2. Payment Success Event| Book
+    Book -.->|3. Send Email Event| Noti
+
+    style Services fill:#fff3e0,stroke:#e65100
+    style Databases fill:#eceff1,stroke:#455a64
+</pre>
+
+**Tại sao chọn thiết kế này? (Giải thích ưu điểm):**
+1.  **Khả năng mở rộng (Scalability):** Vào giờ cao điểm, người dùng chủ yếu là *Tìm sân*. Ta có thể nhân bản (scale up) 5 server chạy *Court Service*, trong khi *Identity Service* chỉ cần 1 server là đủ. Điều này tiết kiệm tài nguyên hơn so với Monolithic (phải nhân bản cả cục).
+2.  **Cách ly lỗi (Fault Isolation):** Nếu *Notification Service* bị chết (lỗi gửi mail), người dùng vẫn đặt sân và thanh toán bình thường. Hệ thống không bị sập toàn bộ.
+3.  **Công nghệ đa dạng:** *Court Service* cần tìm kiếm nhanh nên dùng MongoDB, trong khi *Booking Service* cần chặt chẽ nên dùng PostgreSQL. Microservices cho phép làm điều này dễ dàng.
