@@ -772,3 +772,33 @@ C. Tăng dung lượng bộ nhớ của máy tính cá nhân <br>
 D. Thay thế hoàn toàn các nhân viên bốc xếp tại bến cảng
 
 > *Giải thích: Mục 1.1 "Dùng docker có lợi gì?" nêu rõ lợi ích giúp mã nguồn chạy ổn định và cho ra kết quả giống nhau trên các máy khác nhau.*
+
+
+# Chương 13. Thiết kế chi tiết
+
+
+# Chương 14. Docker Image và Docker Container
+
+<b>Câu 14.1 Mối quan hệ giữa Docker Image và Docker Container là gì?</b> <br>
+A. Container là bản thiết kế để tạo ra Image. <br>
+B. Cả hai là những khái niệm hoàn toàn độc lập, không liên quan đến nhau. <br>
+<mark>C. Image là khuôn mẫu bất biến (bản thiết kế), còn Container là thực thể đang chạy được tạo ra từ Image đó.</mark> <br>
+D. Image dùng cho Windows, còn Container dùng cho Linux.
+
+> *Giải thích: Dựa vào ví dụ làm bánh trong bài học, Image chính là "công thức làm bánh" (không thay đổi được), còn Container là "chiếc bánh thật" được tạo ra từ công thức đó để sử dụng.*
+
+<b>Câu 14.2 Khi chạy lệnh `docker build -t hello-image:v1 .`, dấu chấm `.` ở cuối lệnh có ý nghĩa gì?</b> <br>
+<mark>A. Báo cho Docker biết hãy tìm Dockerfile và các tập tin liên quan ngay tại thư mục hiện hành.</mark> <br>
+B. Kết thúc câu lệnh tương tự như dấu chấm câu trong văn bản. <br>
+C. Chỉ định rằng Image sau khi build xong sẽ bị ẩn đi. <br>
+D. Ra lệnh cho Docker xóa tất cả các Image cũ trước khi build.
+
+> *Giải thích: Dấu `.` đại diện cho "thư mục hiện tại" (current directory). Nó chỉ định ngữ cảnh (context) để Docker Engine biết nơi lấy mã nguồn và file cấu hình (Dockerfile) để tiến hành đóng gói.*
+
+<b>Câu 14.3 Theo tài liệu, để chuyển giao một Docker Image sang máy tính khác bằng đĩa USB (không qua mạng Internet), bạn sử dụng cặp lệnh nào sau đây?</b> <br>
+A. docker push và docker pull <br>
+<mark>B. docker save và docker load</mark> <br>
+C. docker build và docker run <br>
+D. docker export và docker import
+
+> *Giải thích: Mục 14.4.2 nêu rõ: Lệnh `docker save` dùng để xuất Image thành một tập tin nén (như .tar) để chép vào USB. Tại máy nhận, ta dùng lệnh `docker load` để nạp tập tin đó vào hệ thống Docker.*
